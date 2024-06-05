@@ -6,9 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grid</title>
   <style>
+    @media (max-width:500px){ 
+      .grid-container{
+      width: 100%;
+      grid-template-columns: 100px 100px 100px;
+      grid-template-rows: 100px 100px 100px 100px;
+    }
+    .grid-item:nth-child(3){
+      grid-column: unset;
+    }
+    .grid-item:nth-child(5){
+      grid-column: unset;
+    }
+    .grid-item:nth-child(10){
+      grid-column: 1/4;
+    }
+    }
+
     .grid-container{
-      width: 500px; 
+      display: grid;
+      width: 540px; 
       margin: 0 auto;
+      row-gap: 10px;
+      column-gap: 10px;
+      grid-template-columns: 100px 100px 100px 100px;
+      grid-template-rows: 100px 100px 100px 100px;
     }
     .grid-item{
       width:100%;
@@ -16,6 +38,18 @@
     }
     .grid-item:nth-child(2n){
       background-color: #bd4242;
+    }
+    .grid-item:nth-child(2){
+      grid-column-start: 2;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+    .grid-item:nth-child(3){
+      grid-column: 4/6;
+    }
+    .grid-item:nth-child(5){
+      grid-column: 4/6;
     }
   </style>
 </head>
